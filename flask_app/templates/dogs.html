@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <p>{{all_dogs}}</p>
+        <ul>
+        {% for dog in all_dogs %}
+        <li><a href="dogs/{{dog.id}}">{{dog.name}}</a></li>
+            
+        {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
+
+
+<ul>
+    {% for rest in all_restaurants %}
+        <li>{{ rest.name }}</li>
+        <ul>
+            {% for burger in rest.burgers %}
+                <li>{{ burger.name }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</ul>
+
+<table>
+    <thead>
+        <tr>
+            <th>Restaurant</th>
+            <th>Burgers</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for rest in all_restaurants %}
+            <tr>
+                <td>{{ rest.name }}</td>
+                <td>{{ rest.burgers[0].name}} </td>
+            </tr>
+            {% for burger in rest.burgers %}
+                {% if loop.index != 1 %}
+                    <td></td>
+                    <td>{{burger.name}}</td>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </tbody>
+</table>

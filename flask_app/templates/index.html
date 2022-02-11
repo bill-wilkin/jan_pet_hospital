@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+
+        <form action="/owners/create" method="POST">
+            <label for="first_name">First Name</label>
+            <input type="text" name="first_name" id="">
+            <label for="last_name">Last Name</label>
+            <input type="text" name="last_name" id="">
+            <label for="email">email</label>
+            <input type="text" name="email" id="">
+            <input type="submit" value="Create Owner">
+        </form>
+
+        <h1>Welcome to the Dog Hospital</h1>
+        <a href="/owners">View all owners</a>
+        <a href="/dogs">View all dogs</a>
+        <a href="/owners/new">Add a new owner</a>
+        <a href="/dogs/new">Add a new dog</a>
+
+
+    </div>
+
+</body>
+
+</html>

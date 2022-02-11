@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <p>First Name: {{this_owner.first_name}}</p>
+        <p>Last Name: {{this_owner.last_name}}</p>
+        <p>Email: {{this_owner.email}}</p>
+        <p>Dogs: </p>
+        <ul>
+            {% for dog in this_owner.dogs %}
+                {% if loop.index != 1 %}
+                
+                <li><a href="/dogs/{{dog.id}}">{{dog.name}}</a></li>
+                {% endif %}
+                
+            {% endfor %}
+            
+        </ul>
+    </div>
+</body>
+</html>
