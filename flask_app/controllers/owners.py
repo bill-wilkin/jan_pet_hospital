@@ -56,10 +56,10 @@ def owners():
     owners_from_db = owner.Owner.get_all()
     return render_template('owners.html', all_owners = owners_from_db)
 
-@app.route('/owners/<int:owner_id>')
-def owner_profile(owner_id):
+@app.route('/owners/<int:owner___id>')
+def owner_profile(owner___id):
     owner_info = {
-        'id':owner_id
+        'id':owner___id
     }
     that_owner = owner.Owner.get_one_with_dogs(owner_info)
     return render_template('owner_profile.html', this_owner =that_owner)
